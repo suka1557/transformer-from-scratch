@@ -8,6 +8,7 @@ data_file = os.path.join(DATA_FOLDER, TRAIN_DATA_FILENAME)
 
 from src.get_char_dicts import get_char_idx_mappings
 from src.get_torch_dataset import TextDataset
+from src.convert_text_to_indices import tokenize_sentence
 
 data = pd.read_csv(data_file)
 print(data.shape)
@@ -30,3 +31,5 @@ dataset = TextDataset(language1_sentences=data['english_sentence'].to_list(), la
 
 print(dataset[1])
 print(len(dataset))
+
+tokenized_sentence = tokenize_sentence(dataset[1][0], eng_char_to_idx) 
