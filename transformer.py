@@ -1,7 +1,9 @@
 import os, sys
 import numpy as np, pandas as pd
 
-from configs import DATA_FOLDER, TRAIN_DATA_FILENAME
+from configs import DATA_FOLDER, TRAIN_DATA_FILENAME, PROJECT_ROOT
+sys.path.append(PROJECT_ROOT)
+
 data_file = os.path.join(DATA_FOLDER, TRAIN_DATA_FILENAME)
 
 from src.get_char_dicts import get_char_idx_mappings
